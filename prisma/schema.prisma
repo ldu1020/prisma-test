@@ -21,6 +21,16 @@ model Post {
     authorId  String?
 }
 
+model Contact {
+    id        String   @id @default(cuid())
+    name      String
+    email     String?
+    phone     String
+    createdAt DateTime @default(now()) @map(name: "created_at")
+
+    @@map(name: "contacts")
+}
+
 model User {
     id        String   @id @default(cuid())
     name      String?
